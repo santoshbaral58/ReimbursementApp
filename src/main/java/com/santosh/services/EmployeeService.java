@@ -1,22 +1,26 @@
 package com.santosh.services;
 
-import java.util.List;
+import org.apache.log4j.Logger;
 
 import com.santosh.beans.Employee;
 import com.santosh.dao.EmployeeDao;
 import com.santosh.dao.EmployeeDaoJDBC;
-import com.santosh.exceptions.InvalidCredentialException;
 
 public class EmployeeService {
 
+	private Logger log = Logger.getRootLogger();
 	private EmployeeDao ed = new EmployeeDaoJDBC();
 
-	public List<Employee> findAllEmployee(){
-		
-		return ed.findAll();
-	}
-	
-	public void login() throws InvalidCredentialException {
-		throw new InvalidCredentialException(403);
+	public Employee login(Employee emp) {
+		Employee checkEmp = ed.findUser(emp.getUsername(), emp.getPassword());// ed.findUser(user.getUsername(),
+																				// user.getPassword());
+		if (emp.getUsername().equals(checkEmp.getUsername()) && emp.getPassword().equals(checkEmp.getPassword())) {
+			log.trace("Login Successful");
+			return checkEmp;
+		} else {
+			log.trace("Invalid Credentials");
+			return null;
+		}
+
 	}
 }

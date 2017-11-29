@@ -1,6 +1,7 @@
 package com.santosh.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,7 +49,34 @@ public class ReimbursementDaoJDBC implements ReimbursementDao {
 			while (rs.next()) {
 
 				Reimbursement r = extractReimbursement(rs);
-				/*r.setReimbursements(rs.findByReimbursementId(r.getUserId()));*/
+				/* r.setReimbursements(rs.findByReimbursementId(r.getUserId())); */
+				reimbursements.add(r);
+			}
+			return reimbursements;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			log.warn("failed to retreive all reimbursements from the database");
+			return null;
+		}
+
+	}
+
+	@Override
+	public List<Reimbursement> findByStatus(int userId, int statusId) {
+
+		log.debug("attempting to retreive all reimbursements by their statusId");
+		List<Reimbursement> reimbursements = new ArrayList<>();
+		try (Connection conn = cu.getConnection()) {
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM ERS_REIMBURSEMENT WHERE REIMB_AUTHOR=? HAVING REIMB_STATUS_ID=?");
+			ps.setInt(1, userId);
+			ps.setInt(2, statusId);
+			ResultSet rs = ps.executeQuery();
+
+			log.trace("extracting reimbursement from the result set");
+			while (rs.next()) {
+
+				Reimbursement r = extractReimbursement(rs);
+				/* r.setReimbursements(rs.findByReimbursementId(r.getUserId())); */
 				reimbursements.add(r);
 			}
 			return reimbursements;
@@ -58,7 +86,33 @@ public class ReimbursementDaoJDBC implements ReimbursementDao {
 			return null;
 		}
 
-	
+	}
+
+	@Override
+	public int addNewReimbursement(Reimbursement newReimbursement) {
+		
+		log.debug("Adding new reimbursement");
+		
+		try(Connection conn = cu.getConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO ERS_REIMBURSEMENT (REIMB_AMOUNT, REIMB_SUBMITTED, REIMB_DESCRIPTION, REIMB_AUTHOR, REIMB_TYPE_ID) VALUES(?,?,?,?,?)");
+			ps.setDouble(1, newReimbursement.getReimbAmount());
+			ps.setDate(2, (Date) newReimbursement.getReimbSubmitted());
+			ps.setString(3, newReimbursement.getReimbDescription());
+			ps.setInt(4, newReimbursement.getReimbAuthor());
+			ps.setInt(5, newReimbursement.getReimTypeId());
+			ps.executeQuery();
+			log.debug("Reimbursement has been added successfully");
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			log.warn("failed to add the new reimbursement");
+			
+		}
+		
+		return 0;
 	}
 
 }
