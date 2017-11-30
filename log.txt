@@ -1,0 +1,58 @@
+2017-11-30 11:07:12 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 11:07:12 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 11:07:12 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 11:07:13 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 11:07:33 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 11:07:33 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 11:07:33 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 11:07:34 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 11:10:45 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 11:10:47 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 11:10:47 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 11:10:48 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 11:12:02 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 11:12:02 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 11:12:02 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 11:12:03 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 13:11:11 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 13:11:12 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 13:11:12 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 13:11:13 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 13:11:13 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 13:11:13 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully
+2017-11-30 14:34:43 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 14:34:44 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 14:34:44 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 14:34:45 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 14:34:45 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 14:34:46 WARN  ReimbursementDaoJDBC:111 - failed to add the new reimbursement
+2017-11-30 14:38:10 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 14:38:12 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 14:38:12 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 14:38:13 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 14:38:13 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 14:38:13 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully
+2017-11-30 14:41:33 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 14:41:34 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 14:41:34 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 14:41:34 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 14:41:35 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 14:41:35 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully
+2017-11-30 15:04:49 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 15:04:49 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 15:04:49 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 15:04:50 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 15:04:50 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 15:04:51 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully
+2017-11-30 15:08:39 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 15:08:39 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 15:08:39 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 15:08:40 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 15:08:40 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 15:08:41 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully
+2017-11-30 15:10:49 DEBUG EmployeeDaoJDBC:65 - Finding the employee with username and password
+2017-11-30 15:10:50 TRACE EmployeeDaoJDBC:74 - Extracting employee
+2017-11-30 15:10:50 DEBUG ReimbursementDaoJDBC:41 - attempting to retreive all reimbursements from the database
+2017-11-30 15:10:51 TRACE ReimbursementDaoJDBC:48 - extracting reimbursement from the result set
+2017-11-30 15:10:51 DEBUG ReimbursementDaoJDBC:94 - Adding new reimbursement
+2017-11-30 15:10:51 DEBUG ReimbursementDaoJDBC:105 - Reimbursement has been added successfully

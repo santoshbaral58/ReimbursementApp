@@ -33,22 +33,18 @@ public class DispatcherServlet extends DefaultServlet{
 			throws IOException, ServletException {
 
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length());
-		// System.out.println(actualURL);
+		System.out.println("this is doGet method from dispatcher sevlet" + actualURL);
 		log.debug("actualURL: " + actualURL);
 
-		switch (actualURL) {
-		case "/":
-			lc.delegateGet(request, response);
-			break;
-		case "/home":
-			lc.delegateGet(request, response);
-			break;
-		case"/reimbursement":
-			rc.delegateGet(request, response);
-			break;
-		default:
+		if (actualURL.startsWith("/static/")) {
 			super.doGet(request, response);
 			return;
+		}
+		else if (actualURL.startsWith("/employee/")) {
+			ec.delegateGet(request, response);
+		}
+		else if (actualURL.startsWith("/reimbursements/")) {
+			rc.delegateGet(request, response);
 		}
 	}
 
@@ -58,16 +54,17 @@ public class DispatcherServlet extends DefaultServlet{
 
 		System.out.println("post request made with url" + request.getRequestURI());
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length());
+		System.out.println(actualURL);
 
-		switch (actualURL) {
-		case "/":
-			lc.delegatePost(request, response);
-			break;
-		case "/new":
+		if(actualURL.startsWith("/static")) {
+			super.doPost(request, response);
+			return;
+		}
+		else if (actualURL.startsWith("/employee/")) {
+			ec.delegatePost(request, response);
+		}
+		else if (actualURL.startsWith("/reimbursement/")) {
 			rc.delegatePost(request, response);
-			break;
-		default:
-			break;
 		}
 		
 	}

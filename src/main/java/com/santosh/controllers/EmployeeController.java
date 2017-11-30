@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,14 +24,13 @@ public class EmployeeController {
 	private EmployeeDao ed = new EmployeeDaoJDBC();
 	private EmployeeService es = new EmployeeService();
 
-	public void delegateGet(HttpServletRequest request, HttpServletResponse response) {
+	public void delegateGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 
 		log.debug("get request delegated to employee controller");
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length() + "/employee".length());
 
 		if ("/".equals(actualURL) || "".equals(actualURL)) {
 
-			try {
 				// get all employees from EmployeeDao
 				List<Employee> allEmployee = ed.findAll();
 
@@ -43,15 +43,12 @@ public class EmployeeController {
 				PrintWriter writer = response.getWriter();
 				writer.write(json);
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
 
 	}
 	
 	
-	public void delegatePost(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException{
+	public void delegatePost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length());
 		if ("/users/login".equals(actualURL)) {
 			String json;

@@ -26,7 +26,7 @@ public class LoginController {
 
 	}
 
-	public void delegatePost(HttpServletRequest request, HttpServletResponse response) {
+	public void delegatePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		log.debug("Post request delegated to Login controller");
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length() + "/".length());
 

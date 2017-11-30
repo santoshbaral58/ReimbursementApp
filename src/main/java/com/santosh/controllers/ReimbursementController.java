@@ -59,7 +59,7 @@ public class ReimbursementController {
 		}
 	}
 
-	public void delegatePost(HttpServletRequest request, HttpServletResponse response) {
+	public void delegatePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		log.debug("post request delegated to Reimbursement controller");
 		String actualURL = request.getRequestURI()
 				.substring(request.getContextPath().length() + "/reimbursement".length());
