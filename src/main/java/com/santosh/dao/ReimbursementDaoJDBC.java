@@ -66,7 +66,7 @@ public class ReimbursementDaoJDBC implements ReimbursementDao {
 		log.debug("attempting to retreive all reimbursements by their statusId");
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		try (Connection conn = cu.getConnection()) {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM ERS_REIMBURSEMENT WHERE REIMB_AUTHOR=? HAVING REIMB_STATUS_ID=?");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM ERS_REIMBURSEMENT WHERE REIMB_AUTHOR=? AND REIMB_STATUS_ID=?");
 			ps.setInt(1, userId);
 			ps.setInt(2, statusId);
 			ResultSet rs = ps.executeQuery();
