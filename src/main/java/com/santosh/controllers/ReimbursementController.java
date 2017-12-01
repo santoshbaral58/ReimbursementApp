@@ -29,9 +29,9 @@ public class ReimbursementController {
 		String actualURL = request.getRequestURI()
 				.substring(request.getContextPath().length() + "/reimbursement".length());
 
-		request.getRequestDispatcher("/static/reimbursemnets.html").forward(request, response);
+		request.getRequestDispatcher("/static/reimbursement.html").forward(request, response);
 
-		if (actualURL.equals("/") || actualURL.equals("")) {
+		if (actualURL.equals("/reimbursement") || actualURL.equals("")) {
 
 				// List for storing all the Reimbursement
 				List<Reimbursement> rl = new ArrayList<>();

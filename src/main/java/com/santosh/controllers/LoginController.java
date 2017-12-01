@@ -22,7 +22,7 @@ public class LoginController {
 	public void delegateGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("Get request in Login controller");
-		request.getRequestDispatcher("/static/login.html").forward(request, response);
+		String actualURL = request.getRequestURI().substring(request.getContextPath().length());
 
 	}
 
@@ -51,6 +51,7 @@ public class LoginController {
 			if (actualEmp == null) {
 				response.setStatus(401);
 			} else {
+				log.debug("logged in");
 				response.setStatus(200);
 				request.getSession().setAttribute("userId", actualEmp.getUserId());
 			}

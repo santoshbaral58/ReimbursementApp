@@ -9,24 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.apache.log4j.Logger;
 
-import com.santosh.controllers.EmployeeController;
+//import com.santosh.controllers.EmployeeController;
 import com.santosh.controllers.LoginController;
 import com.santosh.controllers.ReimbursementController;
 import com.santosh.services.EmployeeService;
 
-public class DispatcherServlet extends DefaultServlet{
+public class FrontController extends DefaultServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5198226055892808713L;
 
 	private static Logger log = Logger.getRootLogger();
 
-	private EmployeeController ec = new EmployeeController();
-	private ReimbursementController rc = new ReimbursementController();
-	private LoginController lc = new LoginController();
-	private EmployeeService es = new EmployeeService();
+	//EmployeeController ec = new EmployeeController();
+	ReimbursementController rc = new ReimbursementController();
+	LoginController lc = new LoginController();
+	EmployeeService es = new EmployeeService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,15 +33,28 @@ public class DispatcherServlet extends DefaultServlet{
 		System.out.println("this is doGet method from dispatcher sevlet" + actualURL);
 		log.debug("actualURL: " + actualURL);
 
-		if (actualURL.startsWith("/static/")) {
+		switch (actualURL) {
+		case "/":
+			lc.delegateGet(request, response);
+			break;
+		//case "/home":
+		//	ec.delegateGet(request, response);
+		//	break;
+		case "/history":
+			rc.delegateGet(request, response);
+			break;
+		case "/reimbursement":
+			rc.delegateGet(request, response);
+			break;
+		case "/approve":
+			rc.delegateGet(request, response);
+			break;
+		case "/deny":
+			rc.delegateGet(request, response);
+			break;
+		default:
 			super.doGet(request, response);
 			return;
-		}
-		else if (actualURL.startsWith("/employee/")) {
-			ec.delegateGet(request, response);
-		}
-		else if (actualURL.startsWith("/reimbursements/")) {
-			rc.delegateGet(request, response);
 		}
 	}
 
@@ -56,16 +66,31 @@ public class DispatcherServlet extends DefaultServlet{
 		String actualURL = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(actualURL);
 
-		if(actualURL.startsWith("/static")) {
-			super.doPost(request, response);
-			return;
-		}
-		else if (actualURL.startsWith("/employee/")) {
-			ec.delegatePost(request, response);
-		}
-		else if (actualURL.startsWith("/reimbursement/")) {
+		switch (actualURL) {
+		case "/":
+			lc.delegatePost(request, response);
+			break;
+		case "/new":
 			rc.delegatePost(request, response);
+			break;
+		//case "/home":
+		//	ec.delegatePost(request, response);
+		//	break;
+		case "/history":
+			rc.delegatePost(request, response);
+			break;
+		case "/reimbursement":
+			rc.delegatePost(request, response);
+			break;
+		case "/approve":
+			rc.delegatePost(request, response);
+			break;
+		case "/deny":
+			rc.delegatePost(request, response);
+			break;
+		default:
+			break;
 		}
-		
+
 	}
 }

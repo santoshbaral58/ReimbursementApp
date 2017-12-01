@@ -12,14 +12,14 @@ function login() {
     xhttp.onload = (resp) => {
         if(xhttp.status === 200) {
             // resp contains the response body
-            window.location = './reimubursement.html';
+            window.location = './reimbursement.html';
         } else {
             alert('invalid credentials')
         }
     }
     
     
-    xhttp.open('POST', '../employee/login');
+    xhttp.open('POST', 'http://localhost:8080/ReimbursementApp/');
     
     // JSON.stringify converts a JavaScript object to JSON
     // JSON.parse converts a string to a JavaScript object

@@ -10,28 +10,28 @@
 
 <body>
 
-        <form onsubmit="create()" method = "get">
-            <div class="container">
-            <label><b>Enter the amount of your reimbursment</b></label>
-            <input type="text" id="amount" placeholder="Enter Amount" required>
-
-            <label><b>Enter the description</b></label>
-            <input type="text" id="description" placeholder="Enter Description" required>
-
-            <label><b>Enter </b></label>
-            <input type="text" id="type" placeholder="Enter Type" required>
-
-            <button type ="submit">Submit</button>
-    			</div>
-
-
     <div id="viewAllReimbursement">
-        <button type="button" onclick="viewAllReimbursement"> All Reimbursement</button>
+    <h1>View All Reimbursement</h1>
+        <button type="button" onclick="viewAllReimbursement">View All Reimbursement</button>
     </div>
-
+	<h1>View All Pending Reimbursement</h1>
     <div id="viewPending">
         <button type="button" onclick="viewPendingReimbursement">All Pending Reimbursement</button>
     </div>
+
+	<div>
+		<h1>Create Reimbursement</h1>
+		<form onsubmit="event.preventDefault(); approve()">
+		<input type="text" id="amount" placeholder="Amount">
+		<input type="text" id="description" placeholder="Description">
+		<input type="text" id="type" placeholder="Type">
+		
+		<input type="submit">
+		</form>
+	</div>
+	
+	
+	<script src ="reimbursement.js"></script>
 
 </body>
 

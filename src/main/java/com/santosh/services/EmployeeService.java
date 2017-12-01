@@ -12,8 +12,8 @@ public class EmployeeService {
 	private EmployeeDao ed = new EmployeeDaoJDBC();
 
 	public Employee login(Employee emp) {
-		Employee checkEmp = ed.findUser(emp.getUsername(), emp.getPassword());// ed.findUser(user.getUsername(),
-																				// user.getPassword());
+		Employee checkEmp = ed.findUser(emp.getUsername(), emp.getPassword());
+																			
 		if (emp.getUsername().equals(checkEmp.getUsername()) && emp.getPassword().equals(checkEmp.getPassword())) {
 			log.trace("Login Successful");
 			return checkEmp;

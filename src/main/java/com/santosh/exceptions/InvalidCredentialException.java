@@ -2,6 +2,8 @@ package com.santosh.exceptions;
 
 public class InvalidCredentialException extends Exception{
 
+
+	private static final long serialVersionUID = -3232870553220829361L;
 	private int statusCode;
 	
 	

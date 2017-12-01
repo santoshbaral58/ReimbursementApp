@@ -3,11 +3,11 @@
   <display-name>ReimbursementApp</display-name>
   
   <servlet>
-		<servlet-name>RequestDispatcher</servlet-name>
-		<servlet-class>com.santosh.frontController.DispatcherServlet</servlet-class>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>com.santosh.frontController.FrontController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>RequestDispatcher</servlet-name>
+		<servlet-name>FrontController</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
   
