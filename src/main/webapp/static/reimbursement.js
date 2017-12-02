@@ -26,6 +26,6 @@ function viewAllReimbursement(){
           document.getElementById("viewAllReimbursement").innerHTML = html;
         }
     }
-    xhttp.open('GET', 'http://localhost:8080/ReimbursementApp/static/');
+    xhttp.open('GET', '../reimbursment');
     xhttp.send(); 
 }

@@ -19,7 +19,7 @@ function login() {
     }
     
     
-    xhttp.open('POST', 'http://localhost:8080/ReimbursementApp/');
+    xhttp.open('POST', '../ReimbursementApp/');
     
     // JSON.stringify converts a JavaScript object to JSON
     // JSON.parse converts a string to a JavaScript object
